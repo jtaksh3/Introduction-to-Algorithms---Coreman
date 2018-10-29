@@ -2,14 +2,14 @@ import java.util.Scanner;
 
 public class MaximumSubarray {
     int max_crossing_subarray(int[] arr, int low, int mid, int high) {
-        int left_sum = -214767324;
+        int left_sum = -214767324;//Initialised to lowest value i.e. Negative
         int sum = 0;
         for(int i = mid; i >= low; i--) {
             sum = sum + arr[i];
             if(sum > left_sum)
                 left_sum = sum;
         }
-        int right_sum = -214767324;
+        int right_sum = -214767324;//Initialised to lowest value i.e. Negative
         sum = 0;
         for(int j = mid+1; j <= high; j++) {
             sum = sum + arr[j];
